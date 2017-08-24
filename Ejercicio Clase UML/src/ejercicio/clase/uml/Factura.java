@@ -19,7 +19,7 @@ public class Factura {
         this.formadepago = formadepago;
         this.codigopromocional = codigopromocional;
         this.preciofinal = preciofinal;
-        this.detalle = new Detalle();
+        this.detalle = new Detalle[10];
     }
     
     public void imprimir(){
