@@ -16,7 +16,13 @@ public class GestionTienda {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Tienda mitienda=new Tienda();    
+        Tienda mitienda=new Tienda();
+        Vendedor mivendedor=new Vendedor("Andres", "Sanchez");
+        Producto miproducto=new Producto("Computadores", 123450);
+        Factura factura=new Factura(0, 0.95, mivendedor, 12,8, 2017, 4);
+        factura.agregarDetalle(3, miproducto);
+        mitienda.agregarFactura(factura);
+        
     
     }
     

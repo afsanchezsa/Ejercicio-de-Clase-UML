@@ -17,11 +17,11 @@ public class Tienda {
     private  Factura facturatemporal;
 
     public Tienda() {
-        this.factura = new ArrayList();
+        this.factura = new ArrayList<Factura>();
     }
 
-    public void setFactura(Factura factura) {
-        
+    public void agregarFactura(Factura factura) {
+        this.factura.add(factura);
     }
     
     

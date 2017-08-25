@@ -11,20 +11,20 @@ package ejercicio.clase.uml;
  */
 public class Factura {
     private int formadepago;
-    private int codigopromocional;
+    private double codigopromocional;
     private double preciofinal;
     private Detalle[]detalle;
-    private Fecha fecha;
+    private Fechas fecha;
     private Vendedor vendedor;
     private int indice=0;
 
-    public Factura(int formadepago, int codigopromocional, double preciofinal, Detalle[] detalle, Vendedor vendedor, int dia,int mes,int ano,int hora) {
+    public Factura(int formadepago, double codigopromocional, Vendedor vendedor, int dia,int mes,int ano,int hora) {
         this.formadepago = formadepago;
         this.codigopromocional = codigopromocional;
-        this.preciofinal = preciofinal;
+        
         this.detalle = new Detalle[10];
         this.vendedor=vendedor;
-        this.fecha=new Fecha(dia, mes, ano, hora);
+        this.fecha=new Fechas(dia, mes, ano, hora);
     }
     
     public void imprimir(){
@@ -87,7 +87,7 @@ public class Factura {
     
     }
 
-    public void setDetalle(int cantidadvendida,Producto producto) {
+    public void agregarDetalle(int cantidadvendida,Producto producto) {
         this.detalle[indice] = new Detalle(cantidadvendida, producto);
         indice++;
     }
