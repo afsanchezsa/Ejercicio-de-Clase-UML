@@ -14,6 +14,7 @@ public class Factura {
     private int codigopromocional;
     private double preciofinal;
     private Detalle[]detalle;
+    private Fecha fecha;
 
     public Factura(int formadepago, int codigopromocional, double preciofinal, Detalle[] detalle) {
         this.formadepago = formadepago;
@@ -23,6 +24,7 @@ public class Factura {
     }
     
     public void imprimir(){
+       double subtotalfinal=0;
         System.out.print("Forma de pago: ");
         if(this.formadepago==0){
             System.out.print(" Efectivo");
@@ -32,11 +34,16 @@ public class Factura {
         }else if(this.formadepago==2){
             System.out.print("Tarjeta");
         }
+        System.out.println("Fecha: \n Dia:"+this);
         System.out.println("codigo promocional"+this.codigopromocional);
-        System.out.println("detalles:\n ");
+        System.out.println("detalles:\n Producto    \t cantidad   \t subtotal ");
                 for(int i=0;i<10;i++){
-                
+                    System.out.println(this.detalle[i].getProducto()+" "+ this.detalle[i].getCantidadvendida()+" "+this.detalle[i].obtenersubtotal());
+                subtotalfinal+=this.detalle[i].obtenersubtotal();
                 }
+        System.out.println(" subtotal final: "+subtotalfinal);
+        
+                
         
     }
     public void obtenertotal(){
