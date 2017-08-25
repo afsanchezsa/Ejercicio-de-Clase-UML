@@ -13,11 +13,13 @@ public class Vendedor {
     private static int id=1;
     private String nombre;
     private String apellido;
+    public int ventas=0;
 
     public Vendedor(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     id++;
+    
     }
 
     public int getId() {

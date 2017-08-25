@@ -29,7 +29,9 @@ private Producto producto;
     public String getProducto() {
         return producto.getDescripcion();
     }
-
+     public Producto Obtenerproducto(){
+     return this.producto;
+     }
     public void setCantidadvendida(int cantidadvendida) {
         this.cantidadvendida = cantidadvendida;
     }

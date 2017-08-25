@@ -18,11 +18,18 @@ public class Factura {
     private Vendedor vendedor;
     private static int indice=0;
 
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
     public Factura(int formadepago, double codigopromocional, Vendedor vendedor, int dia,int mes,int ano,int hora) {
         this.formadepago = formadepago;
         this.codigopromocional = codigopromocional;
-        
+        vendedor.ventas++;
         this.detalle = new Detalle[10];
+        /*for(int i=0;i<10;i++){
+        detalle[i]=null;
+        }*/
         this.vendedor=vendedor;
         this.fecha=new Fechas(dia, mes, ano, hora);
     }
@@ -38,7 +45,7 @@ public class Factura {
         }else if(this.formadepago==2){
             System.out.print("Tarjeta");
         }
-        System.out.println("Fecha: \n Dia:"+this.fecha.getDia()+"Mes: "+this.fecha.getMes()+"Año: "+this.fecha.getAno()+"Hora: "
+        System.out.println("Fecha:  Dia:"+this.fecha.getDia()+"Mes: "+this.fecha.getMes()+"Año: "+this.fecha.getAno()+"Hora: "
         + this.fecha.getHora()+":00");
         System.out.println("codigo promocional"+this.codigopromocional);
         System.out.println("detalles:\n Producto    \t cantidad   \t subtotal ");
@@ -64,18 +71,18 @@ public class Factura {
          double subtotalfinal=0;
         System.out.print("Forma de pago: ");
         if(this.formadepago==0){
-            System.out.print(" Efectivo");
+            System.out.print(" Efectivo ");
             
         }else if(this.formadepago==1){
-            System.out.print("Débito");
+            System.out.print("Débito ");
         }else if(this.formadepago==2){
-            System.out.print("Tarjeta");
+            System.out.print("Tarjeta ");
         }
-        System.out.println("Fecha: \n Dia:"+this.fecha.getDia()+"Mes: "+this.fecha.getMes()+"Año: "+this.fecha.getAno()+"Hora: "
+        System.out.println(" Fecha: Dia:"+this.fecha.getDia()+" Mes: "+this.fecha.getMes()+" Año: "+this.fecha.getAno()+" Hora: "
         + this.fecha.getHora()+":00");
-        System.out.println("codigo promocional"+this.codigopromocional);
-        System.out.println("detalles:\n Producto    \t cantidad   \t subtotal ");
-                for(int i=0;i<indice;i++){
+        System.out.println("codigo promocional : "+this.codigopromocional);
+        System.out.println("detalles:\n Codigo\tProducto    \t cantidad   \t subtotal ");
+                for(int i=0;i<6;i++){
                     System.out.println(this.detalle[i].getProducto()+"      \t "+ this.detalle[i].getCantidadvendida()+" \t "+this.detalle[i].obtenersubtotal());
                 subtotalfinal+=this.detalle[i].obtenersubtotal();
                 }
@@ -91,4 +98,5 @@ public class Factura {
         this.detalle[indice] = new Detalle(cantidadvendida, producto);
         indice++;
     }
+    
 }
