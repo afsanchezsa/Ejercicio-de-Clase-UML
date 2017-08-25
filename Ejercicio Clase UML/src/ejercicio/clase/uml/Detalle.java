@@ -13,10 +13,13 @@ public class Detalle {
 private int cantidadvendida;
 private Producto producto;
 
-    public Detalle() {
+    public Detalle(int cantidadvendida, Producto producto) {
+    this.cantidadvendida=cantidadvendida;
+    this.producto=producto;
     }
     public double obtenersubtotal(){
-    double subtotal=this.cantidadvendida*producto.precio;
+    double subtotal=this.cantidadvendida*producto.getPreciounitario();
+    return subtotal;
     }
 
     public int getCantidadvendida() {

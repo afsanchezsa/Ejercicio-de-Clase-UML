@@ -13,10 +13,25 @@ import java.util.ArrayList;
  */
 public class Tienda {
     private ArrayList<Factura>factura;
-    private double totalventas;
+    private double totalventas=0;
+    private  Factura facturatemporal;
+
+    public Tienda() {
+        this.factura = new ArrayList();
+    }
+
+    public void setFactura(Factura factura) {
+        
+    }
+    
+    
     
     public double gettotalventas(){
-    return totalventas;
+    for(int i=0;i<this.factura.size();i++){
+    facturatemporal=this.factura.get(i);
+        totalventas+=facturatemporal.obtenertotal();
+    } System.out.println("el total de las ventas es: ");
+        return totalventas;
     }
     
     
