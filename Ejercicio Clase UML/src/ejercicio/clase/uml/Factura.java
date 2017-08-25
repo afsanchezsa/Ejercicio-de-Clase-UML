@@ -16,7 +16,7 @@ public class Factura {
     private Detalle[]detalle;
     private Fechas fecha;
     private Vendedor vendedor;
-    private int indice=0;
+    private static int indice=0;
 
     public Factura(int formadepago, double codigopromocional, Vendedor vendedor, int dia,int mes,int ano,int hora) {
         this.formadepago = formadepago;
@@ -75,8 +75,8 @@ public class Factura {
         + this.fecha.getHora()+":00");
         System.out.println("codigo promocional"+this.codigopromocional);
         System.out.println("detalles:\n Producto    \t cantidad   \t subtotal ");
-                for(int i=0;i<10;i++){
-                    System.out.println(this.detalle[i].getProducto()+" "+ this.detalle[i].getCantidadvendida()+" "+this.detalle[i].obtenersubtotal());
+                for(int i=0;i<indice;i++){
+                    System.out.println(this.detalle[i].getProducto()+"      \t "+ this.detalle[i].getCantidadvendida()+" \t "+this.detalle[i].obtenersubtotal());
                 subtotalfinal+=this.detalle[i].obtenersubtotal();
                 }
         subtotalfinal=subtotalfinal*codigopromocional;
