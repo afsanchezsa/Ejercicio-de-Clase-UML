@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author USUARIO
+ * @author Andres Felipe Sanchez
  */
 public class GestionTienda {
 

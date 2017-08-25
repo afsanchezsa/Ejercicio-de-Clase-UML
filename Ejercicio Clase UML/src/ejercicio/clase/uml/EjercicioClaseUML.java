@@ -7,7 +7,7 @@ package ejercicio.clase.uml;
 
 /**
  *
- * @author Estudiante
+ * @author Andres Felipe Sanchez
  */
 public class EjercicioClaseUML {
 
