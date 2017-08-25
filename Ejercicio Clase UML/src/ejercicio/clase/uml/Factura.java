@@ -34,7 +34,8 @@ public class Factura {
         }else if(this.formadepago==2){
             System.out.print("Tarjeta");
         }
-        System.out.println("Fecha: \n Dia:"+this);
+        System.out.println("Fecha: \n Dia:"+this.fecha.getDia()+"Mes: "+this.fecha.getMes()+"Año: "+this.fecha.getAno()+"Hora: "
+        + this.fecha.getHora()+":00");
         System.out.println("codigo promocional"+this.codigopromocional);
         System.out.println("detalles:\n Producto    \t cantidad   \t subtotal ");
                 for(int i=0;i<10;i++){
