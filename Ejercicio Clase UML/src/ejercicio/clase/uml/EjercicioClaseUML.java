@@ -7,7 +7,7 @@ package ejercicio.clase.uml;
 
 /**
  *
- * @author Andres Felipe Sanchez
+ * @author Andres Felipe Sanchez y Jaime Eduardo Estupiñan Bedoya
  */
 public class EjercicioClaseUML {
 

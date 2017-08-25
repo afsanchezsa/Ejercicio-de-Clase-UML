@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Andres Felipe Sanchez
+ * @author Andres Felipe Sanchez y Jaime Estupiñan
  */
 public class GestionTienda {
 
