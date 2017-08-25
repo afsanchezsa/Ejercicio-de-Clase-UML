@@ -23,7 +23,21 @@ public class Factura {
     }
     
     public void imprimir(){
-    
+        System.out.print("Forma de pago: ");
+        if(this.formadepago==0){
+            System.out.print(" Efectivo");
+            
+        }else if(this.formadepago==1){
+            System.out.print("Débito");
+        }else if(this.formadepago==2){
+            System.out.print("Tarjeta");
+        }
+        System.out.println("codigo promocional"+this.codigopromocional);
+        System.out.println("detalles:\n ");
+                for(int i=0;i<10;i++){
+                
+                }
+        
     }
     public void obtenertotal(){
     for(int i=0;i<10;i++){    
