@@ -48,10 +48,16 @@ public class GestionTienda {
         mitienda.agregarFactura(factura3);
         mitienda.agregarFactura(factura4);
         mitienda.agregarFactura(factura5);
-        factura.mostrardatosventa(mivendedor);
+        factura.mostrardatosventa(mivendedor,miproducto);
        // String bestseller=mitienda.mejorempleado();
-       mitienda.contar();     
+       mitienda.contar();
+        
+        
+        
         mitienda.impresion();
+ mitienda.verificarlaventa(mivendedor2, miproducto);
+        mitienda.settotalventas();
+        mitienda.settotalventas();
     }
     
 }

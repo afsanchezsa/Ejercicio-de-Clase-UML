@@ -15,10 +15,14 @@ public class Tienda {
     private ArrayList<Factura>factura;
     private double totalventas=0;
     private  Factura facturatemporal;
+
+    public double getTotalventas() {
+        return totalventas;
+    }
     private ArrayList<String> nombresvendedores=new ArrayList<String>();
     private ArrayList<String> nombresvendedores2=new ArrayList<String>();
     private ArrayList<Integer>enteros=new ArrayList<Integer>();
-   
+   boolean sehizolaventa=false;
    int mayor;
    String bestseller;
     public Tienda() {
@@ -39,12 +43,12 @@ public class Tienda {
     
     
     
-    public double gettotalventas(){
+    public void settotalventas(){
     for(int i=0;i<this.factura.size();i++){
     facturatemporal=this.factura.get(i);
-        totalventas+=facturatemporal.obtenertotal();
-    } System.out.println("el total de las ventas es: ");
-        return totalventas;
+        totalventas+=this.factura.get(i).obtenertotal();
+    } System.out.println("el total de las ventas es: "+totalventas);
+         
     }
     public/* ArrayList<String>*/void todoslosnombres(){
     for(int i=0;i<this.factura.size();i++){
@@ -123,5 +127,27 @@ public class Tienda {
         System.out.println(nombresvendedores.get(i));
     }
     }
+   public void verificarlaventa(Vendedor vendedor,Producto producto){
+       
+       int indicador=0;
+       for(int i=0;i<factura.size();i++){
+       if(factura.get(i).getVendedor().equals(vendedor)){
+           for(int j=0;j<8;j++){
+           if(factura.get(i).getDetalle()[j].getProducto().equals(producto)){
+           sehizolaventa=true;
+           indicador=i;
+            
+           }
+           }
+           
+       }if(sehizolaventa){
+          System.out.println("EL VENDEDOR SI EJECUTO ESTA VENTA\n\n\n ");
+           factura.get(indicador).mostrardatosventa(vendedor,producto);
+       }
+       else{
+           System.out.println("esta venta no se realizo");
+       }
+       }
    
+   }
 }

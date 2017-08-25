@@ -49,7 +49,7 @@ public class Factura {
         + this.fecha.getHora()+":00");
         System.out.println("codigo promocional"+this.codigopromocional);
         System.out.println("detalles:\n Producto    \t cantidad   \t subtotal ");
-                for(int i=0;i<10;i++){
+                for(int i=0;i<6;i++){
                     System.out.println(this.detalle[i].getProducto()+" "+ this.detalle[i].getCantidadvendida()+" "+this.detalle[i].obtenersubtotal());
                 subtotalfinal+=this.detalle[i].obtenersubtotal();
                 }
@@ -66,8 +66,11 @@ public class Factura {
     }
     return preciofinal;
     }
-    public void mostrardatosventa(Vendedor vendedor){
-    if(this.vendedor==vendedor){
+    public void mostrardatosventa(Vendedor vendedor,Producto producto){
+    Detalle[]misdetalles=new Detalle[10];
+    misdetalles=this.getDetalle();
+    for(int j=0;j<10;j++){
+        if(this.vendedor.equals(vendedor)&&misdetalles[j].Obtenerproducto().equals(producto)){
          double subtotalfinal=0;
         System.out.print("Forma de pago: ");
         if(this.formadepago==0){
@@ -88,10 +91,15 @@ public class Factura {
                 }
         subtotalfinal=subtotalfinal*codigopromocional;
         System.out.println(" subtotal final con descuento: "+subtotalfinal);
+        break;
         
-                
+        }
     }
     
+    }
+
+    public Detalle[] getDetalle() {
+        return detalle;
     }
 
     public void agregarDetalle(int cantidadvendida,Producto producto) {
